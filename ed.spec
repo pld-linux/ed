@@ -10,7 +10,7 @@ Summary(tr):	GNU satЩr dЭzenleyici
 Summary(uk):	Рядковий редактор GNU
 Name:		ed
 Version:	0.2
-Release:	30
+Release:	32
 License:	GPL
 Group:		Applications/Editors
 Source0:	ftp://ftp.gnu.org/pub/gnu/ed/%{name}-%{version}.tar.gz
@@ -20,6 +20,7 @@ Patch1:		%{name}-autoconf.patch
 Patch2:		%{name}-mkstemp.patch
 Patch3:		%{name}-debian.patch
 Patch4:		%{name}-configure.patch
+Patch5:		%{name}-regex.patch
 URL:		http://www.gnu.org/software/ed/
 BuildRequires:	autoconf
 BuildRequires:	texinfo
@@ -92,6 +93,7 @@ Ed - это строчно-ориентированный текстовый редактор, используемый для
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 chmod +w configure
