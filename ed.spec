@@ -10,7 +10,7 @@ Summary(tr):	GNU satЩr dЭzenleyici
 Summary(uk):	Рядковий редактор GNU
 Name:		ed
 Version:	0.2
-Release:	29
+Release:	30
 License:	GPL
 Group:		Applications/Editors
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/ed/%{name}-%{version}.tar.gz
