@@ -6,7 +6,7 @@ Summary(pl):	GNU edytor liniowy
 Summary(tr):	GNU satýr düzenleyici
 Name:		ed
 Version:	0.2
-Release:	21
+Release:	27
 License:	GPL
 Group:		Applications/Editors
 Group(de):	Applikationen/Editors
@@ -18,6 +18,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-autoconf.patch
 Patch2:		%{name}-mkstemp.patch
 Patch3:		%{name}-debian.patch
+URL:		http://www.gnu.org/software/ed/
 BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
