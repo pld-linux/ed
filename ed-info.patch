@@ -8,7 +8,7 @@ diff -Nru ed-0.2/ed.texinfo ed-0.2.new/ed.texinfo
 +@format
 +@dircategory Miscellaneous:
 +@direntry
-+* ed: (ed)				The GNU Line Editor
++* ed: (ed).				The GNU Line Editor
 +@end direntry
 +@end format
 +@end ifinfo
