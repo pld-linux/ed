@@ -5,7 +5,7 @@ Summary(pl): Edytor liniowy GNU
 Summary(tr): GNU satýr düzenleyici
 Name:        ed
 Version:     0.2
-Release:     9
+Release:     10
 Copyright:   GPL
 Group:       Applications/Editors
 Group(pl):   Aplikacje/Edytory
@@ -52,10 +52,12 @@ make prefix=$RPM_BUILD_ROOT/usr \
 gzip -fn $RPM_BUILD_ROOT/usr/info/ed.info
 
 %post
-/sbin/install-info /usr/info/ed.info.gz /usr/info/dir --entry="* ed: (ed).                  The GNU Line Editor."
+/sbin/install-info /usr/info/ed.info.gz /usr/info/dir --entry \
+"* ed: (ed).                                     The GNU Line Editor."
 
 %preun
-/sbin/install-info --delete /usr/info/ed.info.gz /usr/info/dir --entry="* ed: (ed).                  The GNU Line Editor."
+/sbin/install-info --delete /usr/info/ed.info.gz /usr/info/dir --entry \
+"* ed: (ed).                                     The GNU Line Editor."
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,6 +70,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644, root,  man) /usr/man/man1/*
 
 %changelog
+* Sat Nov 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.2-10]
+- fixed --entry text in {un}registering info page for ed in %post %preun.
+
 * Tue Oct 06 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
   [0.2-9]
 - added pl translation,
