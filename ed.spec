@@ -9,7 +9,7 @@ Summary(ru):	Строчный редактор GNU
 Summary(tr):	GNU satЩr dЭzenleyici
 Summary(uk):	Рядковий редактор GNU
 Name:		ed
-Version:	0.2
+Version:	1
 Release:	32
 License:	GPL
 Group:		Applications/Editors
