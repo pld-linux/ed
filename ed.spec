@@ -1,12 +1,16 @@
 Summary:	GNU Line Editor
 Summary(de):	GNU-Zeileneditor
+Summary(es):	Editor de lМneas de la GNU
 Summary(fr):	иditeur ligne de GNU
 Summary(ja):	GNU ╔И╔╓╔С╔╗╔г╔ё╔©║ё
 Summary(pl):	GNU edytor liniowy
+Summary(pt_BR):	Editor de linhas da GNU
+Summary(ru):	Строчный редактор GNU
 Summary(tr):	GNU satЩr dЭzenleyici
+Summary(uk):	Рядковий редактор GNU
 Name:		ed
 Version:	0.2
-Release:	27
+Release:	29
 License:	GPL
 Group:		Applications/Editors
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/ed/%{name}-%{version}.tar.gz
@@ -33,6 +37,11 @@ Dies ist der GNU-Zeileneditor, eine Implementierung einer der ersten
 Editoren unter *nix. Manche Programme verlassen sich darauf, i.a.
 *brauchen* Sie ihn wahrscheinlich nicht.
 
+%description -l es
+Este es GNU editor de lМnea. Es un soporte a uno de los primeros
+editores para *nix. Algunos de los programas cuentan con Иl, pero de
+manera general, es muy probable que no lo *necesites*.
+
 %description -l fr
 иditeur ligne de GNU. C'est une implantation de l'un des premiers
 Иditeurs d'*nix. Certains programmes en ont besoin, mais en gИnИral,
@@ -53,10 +62,27 @@ Ed jest GNU implementacj╠ standardowego, pierwszego edytora
 uniksowego. CzЙ╤Ф starszych programСw mo©e jeszcze z niego korzystaФ,
 ale wiЙkszo╤Ф ju© prawdopodobnie go nie potrzebuje.
 
+%description -l pt_BR
+Este И o GNU editor de linha. и uma implementaГЦo de um dos primeiros
+editores para *nix. Alguns programas contam com ele, mas no geral vocЙ
+provavelmente nЦo irА *precisar* dele.
+
+%description -l uk
+Ed - це рядково-ор╕╓нтований текстовий редактор, що використову╓ться
+для створення, показу та модиф╕кац╕╖ текстових файл╕в (як
+╕нтерактивно, так ╕ з╕ скрипт╕в). Для б╕льшост╕ ц╕лей ed був зам╕нений
+повноекранними редакторами (наприклад, joe, vi, emacs).
+
 %description -l tr
 Bu paket UN*X'in en eski metin dЭzenleyicilerinden birini
 iГermektedir. BazЩ yazЩlЩmlar hala bu programa gereksinim
 duymaktadЩrlar.
+
+%description -l ru
+Ed - это строчно-ориентированный текстовый редактор, используемый для
+создания, показа и модификации текстовых файлов (как интерактивно, так
+и при помощи скриптов). Для большинства целей ed был заменен
+полноэкранными редакторами (например, joe, vi, emacs).
 
 %prep
 %setup  -q
