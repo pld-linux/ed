@@ -5,11 +5,12 @@ Summary(pl): Edytor liniowy GNU
 Summary(tr): GNU satýr düzenleyici
 Name:        ed
 Version:     0.2
-Release:     10
+Release:     12
 Copyright:   GPL
 Group:       Applications/Editors
 Group(pl):   Aplikacje/Edytory
 Source:      ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Patch0:      ed-info.patch
 Prereq:      /sbin/install-info
 Buildroot:   /tmp/%{name}-%{version}-root
 
@@ -39,25 +40,33 @@ yazýlýmlar hala bu programa gereksinim duymaktadýrlar.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr --exec-prefix=/
-make 
-strip ed
+CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
+./configure \
+	--prefix=/usr \
+	--exec-prefix=/
+rm -f ed.info*
+make
 
 %install
-make prefix=$RPM_BUILD_ROOT/usr \
-    exec_prefix=$RPM_BUILD_ROOT install
+rm -rf $RPM_BUILD_ROOT
+make install \
+	prefix=$RPM_BUILD_ROOT/usr \
+	exec_prefix=$RPM_BUILD_ROOT
 
-gzip -fn $RPM_BUILD_ROOT/usr/info/ed.info
+rm $RPM_BUILD_ROOT/usr/man/man1/red.1
+echo ".so ed.1" > $RPM_BUILD_ROOT/usr/man/man1/red.1
+gzip -9fn $RPM_BUILD_ROOT/usr/{info/ed.info*,man/man1/*}
 
 %post
-/sbin/install-info /usr/info/ed.info.gz /usr/info/dir --entry \
-"* ed: (ed).                                     The GNU Line Editor."
+/sbin/install-info /usr/info/ed.info.gz /etc/info-dir
 
 %preun
-/sbin/install-info --delete /usr/info/ed.info.gz /usr/info/dir --entry \
-"* ed: (ed).                                     The GNU Line Editor."
+if [ $1 = 0 ]; then
+	/sbin/install-info --delete /usr/info/ed.info.gz /etc/info-dir
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -66,10 +75,22 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644, root, root, 755)
 %doc NEWS POSIX README 
 %attr(755, root, root) /bin/*
-/usr/info/ed.info.gz
+/usr/info/ed.info*
 %attr(644, root,  man) /usr/man/man1/*
 
 %changelog
+* Thu Dec 31 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.2-12]
+- standarized {un}registering info pages (added ed-info.patch).
+- red(1) man page is now maked as nroff include to ed(1),
+- added gzipping man pages.
+
+* Mon Dec 27 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.2-11]
+- standarized {un}registering info pages,
+- added gzipping man pages,
+- added using LDFLAGS="-s" to ./configure enviroment.
+
 * Sat Nov 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.2-10]
 - fixed --entry text in {un}registering info page for ed in %post %preun.
