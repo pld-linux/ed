@@ -10,7 +10,8 @@ Copyright:	GPL
 Group:		Applications/Editors
 Group(pl):	Aplikacje/Edytory
 Source:		ftp://prep.ai.mit.edu/pub/gnu/ed/%{name}-%{version}.tar.gz
-Patch:		ed-info.patch
+Patch0:		ed-info.patch
+Patch1:		ed-autoconf.patch
 Prereq:		/sbin/install-info
 Buildroot:	/tmp/%{name}-%{version}-root
 
@@ -39,10 +40,13 @@ Bu paket UN*X'in en eski metin düzenleyicilerinden birini içermektedir. Bazý
 yazýlýmlar hala bu programa gereksinim duymaktadýrlar.
 
 %prep
-%setup -q
-%patch -p1
+%setup  -q
+%patch0 -p1
+%patch1 -p1
 
 %build
+chmod +w configure
+autoconf
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target_platform} \
 	--prefix=/usr \
@@ -53,15 +57,9 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install prefix=$RPM_BUILD_ROOT/usr \
-    exec_prefix=$RPM_BUILD_ROOT \
-    mandir=$RPM_BUILD_ROOT%{_mandir}/man1 \
-    infodir=$RPM_BUILD_ROOT%{_infodir}
+make install DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_mandir}/man1/red.1
-echo .so ed.1 > $RPM_BUILD_ROOT%{_mandir}/man1/red.1
-
-gzip -9nf $RPM_BUILD_ROOT/usr/{share/man/man1/*,share/info/*info*} \
+gzip -9nf $RPM_BUILD_ROOT{%{_mandir}/man1/*,%{_infodir}/*info*} \
 	NEWS POSIX README
 
 %post
@@ -84,9 +82,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 
 %changelog
-* Mon Jun 07 1999 Jan Rêkorajski <baggins@pld.org.pl>
+* Thu Jun 17 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.2-15]
-- spec cleanup
+- added ed-autoconf.patch which allow "make install
+  DESTDIR=</install/prefix>" and fix making red man page as groff include,
+- more rpm macros.
+
+* Mon Jun 07 1999 Jan Rêkorajski <baggins@pld.org.pl>
+- spec cleanup.
 
 * Thu Apr 22 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.2-14]
