@@ -22,6 +22,7 @@ Patch3:		%{name}-debian.patch
 Patch4:		%{name}-configure.patch
 URL:		http://www.gnu.org/software/ed/
 BuildRequires:	autoconf
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr
