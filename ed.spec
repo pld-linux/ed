@@ -55,18 +55,18 @@ make
 make prefix=$RPM_BUILD_ROOT/usr \
     exec_prefix=$RPM_BUILD_ROOT install
 
-rm -f $RPM_BUILD_ROOT/usr/man/man1/red.1
-echo .so ed.1 > $RPM_BUILD_ROOT/usr/man/man1/red.1
+rm -f $RPM_BUILD_ROOT%{_mandir}/man1/red.1
+echo .so ed.1 > $RPM_BUILD_ROOT%{_mandir}/man1/red.1
 
 gzip -9nf $RPM_BUILD_ROOT/usr/{man/man1/*,info/*info*} \
 	NEWS POSIX README
 
 %post
-/sbin/install-info /usr/info/ed.info.gz /etc/info-dir
+/sbin/install-info %{_infodir}/ed.info.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --delete /usr/info/ed.info.gz /etc/info-dir
+	/sbin/install-info --delete %{_infodir}/ed.info.gz /etc/info-dir
 fi
 
 %clean
@@ -77,8 +77,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) /bin/*
 
-/usr/info/ed.info.gz
-/usr/man/man1/*
+%{_infodir}/ed.info.gz
+%{_mandir}/man1/*
 
 %changelog
 * Thu Apr 22 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
