@@ -15,6 +15,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-autoconf.patch
 Patch2:		%{name}-mkstemp.patch
 Patch3:		%{name}-debian.patch
+Patch4:		%{name}-configure.patch
 URL:		http://www.gnu.org/software/ed/
 BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -63,6 +64,7 @@ duymaktadýrlar.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 chmod +w configure
