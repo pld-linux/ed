@@ -44,7 +44,7 @@ yazýlýmlar hala bu programa gereksinim duymaktadýrlar.
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure %{_target} \
+./configure %{_target_platform} \
 	--prefix=/usr \
 	--exec-prefix=/
 
