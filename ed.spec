@@ -1,8 +1,8 @@
 Summary:	GNU Line Editor
-Summary(de):	GNU-Zeileneditor 
+Summary(de):	GNU-Zeileneditor
 Summary(fr):	Éditeur ligne de GNU
 Summary(ja):	GNU ¥é¥¤¥ó¥¨¥Ç¥£¥¿¡£
-Summary(pl):	GNU edytor liniowy 
+Summary(pl):	GNU edytor liniowy
 Summary(tr):	GNU satýr düzenleyici
 Name:		ed
 Version:	0.2
@@ -70,7 +70,7 @@ autoconf
 %configure
 
 rm -f ed.info
-%{__make} 
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
