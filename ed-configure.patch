@@ -6,7 +6,8 @@ diff -urN ed-0.2.orig/configure.in ed-0.2/configure.in
  AC_FUNC_ALLOCA
  if test "$ALLOCA" = alloca.o; then
 -  AC_SUBST(LIBOBJS)LIBOBJS="$LIBOBJS xmalloc.o error.o"
-+  AC_SUBST(LTLIBOBJS) AC_LIBOBJ([xmalloc.o]) AC_LIBOBJ([error.o])
++  AC_LIBOBJ(xmalloc)
++  AC_LIBOBJ(error)
  fi
  
  AC_OUTPUT(Makefile)
