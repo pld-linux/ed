@@ -5,13 +5,14 @@ Summary(pl):	GNU edytor liniowy
 Summary(tr):	GNU satýr düzenleyici
 Name:		ed
 Version:	0.2
-Release:	20
+Release:	21
 License:	GPL
 Group:		Applications/Editors
 Group(de):	Applikationen/Editors
 Group(pl):	Aplikacje/Edytory
 Group(pt):	Aplicações/Editores
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/ed/%{name}-%{version}.tar.gz
+Source1:	%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-autoconf.patch
 Patch2:		%{name}-mkstemp.patch
@@ -67,6 +68,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
+bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
+
 gzip -9nf NEWS POSIX README
 
 %clean
@@ -85,3 +88,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_infodir}/*info*
 %{_mandir}/man1/*
+%lang(nl) %{_mandir}/nl/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
