@@ -5,7 +5,7 @@ Summary(pl):	GNU edytor liniowy
 Summary(tr):	GNU satýr düzenleyici
 Name:		ed
 Version:	0.2
-Release:	19
+Release:	20
 License:	GPL
 Group:		Applications/Editors
 Group(de):	Applikationen/Editors
