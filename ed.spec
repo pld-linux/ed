@@ -5,14 +5,15 @@ Summary(pl):	GNU edytor liniowy
 Summary(tr):	GNU satýr düzenleyici
 Name:		ed
 Version:	0.2
-Release:	18
+Release:	19
 License:	GPL
 Group:		Applications/Editors
-Group(pt):	X11/Aplicações/Editores
+Group(de):	Applikationen/Editors
 Group(pl):	Aplikacje/Edytory
+Group(pt):	Aplicações/Editores
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/ed/%{name}-%{version}.tar.gz
-Patch0:		ed-info.patch
-Patch1:		ed-autoconf.patch
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-autoconf.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr
@@ -51,7 +52,6 @@ duymaktadýrlar.
 %build
 chmod +w configure
 autoconf
-LDFLAGS="-s"; export LDFLAGS
 %configure
 
 rm -f ed.info
@@ -59,10 +59,10 @@ rm -f ed.info
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT{%{_mandir}/man1/*,%{_infodir}/*info*} \
-	NEWS POSIX README
+gzip -9nf NEWS POSIX README
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -78,5 +78,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) /bin/*
 
-%{_infodir}/ed.info.gz
+%{_infodir}/*info*
 %{_mandir}/man1/*
