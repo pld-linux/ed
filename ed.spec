@@ -15,6 +15,7 @@ Source0:	ftp://prep.ai.mit.edu/pub/gnu/ed/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-autoconf.patch
 Patch2:		%{name}-mkstemp.patch
+Patch3:		%{name}-debian.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr
@@ -50,6 +51,7 @@ duymaktadýrlar.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 chmod +w configure
