@@ -5,7 +5,7 @@ Summary(pl):	GNU edytor liniowy
 Summary(tr):	GNU satýr düzenleyici
 Name:		ed
 Version:	0.2
-Release:	16
+Release:	17
 Copyright:	GPL
 Group:		Applications/Editors
 Group(pl):	Aplikacje/Edytory
@@ -14,6 +14,9 @@ Patch0:		ed-info.patch
 Patch1:		ed-autoconf.patch
 Prereq:		/usr/sbin/fix-info-dir
 Buildroot:	/tmp/%{name}-%{version}-root
+
+%define		_prefix		/usr
+%define		_exec_prefix	/
 
 %description
 This is the GNU line editor.  It is an implementation of one of the first
@@ -47,10 +50,8 @@ yazýlýmlar hala bu programa gereksinim duymaktadýrlar.
 %build
 chmod +w configure
 autoconf
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure %{_target_platform} \
-	--prefix=/usr \
-	--exec-prefix=/
+LDFLAGS="-s"; export LDFLAGS
+%configure
 
 rm -f ed.info
 make 
