@@ -1,6 +1,7 @@
 Summary:	GNU Line Editor
 Summary(de):	GNU-Zeileneditor 
 Summary(fr):	Éditeur ligne de GNU
+Summary(ja):	GNU ¥é¥¤¥ó¥¨¥Ç¥£¥¿¡£
 Summary(pl):	GNU edytor liniowy 
 Summary(tr):	GNU satýr düzenleyici
 Name:		ed
@@ -37,6 +38,16 @@ Editoren unter *nix. Manche Programme verlassen sich darauf, i.a.
 Éditeur ligne de GNU. C'est une implantation de l'un des premiers
 éditeurs d'*nix. Certains programmes en ont besoin, mais en général,
 vous n'en aurez probablement pas l'utilité.
+
+%description -l ja
+ed ¤Ï¹Ô»Ø¸þ¤Î¥Æ¥­¥¹¥È¥¨¥Ç¥£¥¿¤Ç¡¢( ÂÐÏÃÅª¤Ç¤â¥·¥§¥ë¥¹¥¯¥ê¥×¥È·ÐÍ³¤Ç¤â
+) ¥Æ¥­¥¹¥È¥Õ¥¡¥¤¥ë¤ÎÀ¸À®¡¢É½¼¨¡¢½¤Àµ¤ËÍÑ¤¤¤é¤ì¤Þ¤¹¡£¼ç¤ÊÌÜÅª¤È¤·¤Æ¤Ï¡¢
+¥Õ¥ë¥¹¥¯¥ê¡¼¥ó¥¨¥Ç¥£¥¿ ( Îã¤¨¤Ð emacs ¤ä vi ) ¤Ë¤è¤Ã¤Æ¤Ê¤µ¤ì¤Æ¤¤¤ë
+ÄÌ¾ï¤ÎÍøÍÑ¤Ë ed ¤òÃÖ¤­´¹¤¨¤Æ¤­¤¿¤³¤È¤Ç¤¹¡£
+
+ed ¤Ï½é´ü¤Î Unix ¥¨¥Ç¥£¥¿¤Ç¡¢¤¤¤í¤¤¤í¤Ê¥×¥í¥°¥é¥à¤Ë»È¤ï¤ì¤Æ¤­¤Þ¤·¤¿¡£
+¤·¤«¤·¡¢°ìÈÌ¤Ë¤ÏÂ¿Ê¬¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ëÉ¬Í×¤Ï¤Ê¤¯¡¢
+Â¿Ê¬»È¤¤¤³¤Ê¤¹¤³¤È¤â¤Ê¤¤¤Ç¤·¤ç¤¦¡£
 
 %description -l pl
 Ed jest GNU implementacj± standardowego, pierwszego edytora
