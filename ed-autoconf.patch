@@ -18,7 +18,7 @@ diff -Nru ed-0.2/Makefile.in ed-0.2.new/Makefile.in
 +	$(INSTALL_DATA) $(srcdir)/ed.1 $(DESTDIR)$(mandir)/$(binprefix)ed$(manext)
  	cd $(mandir); \
 -	  $(LN_S) $(binprefix)ed$(manext) $(binprefix)red$(manext)
-+	echo ".so ed$(manext)" > $(DESTDIR)$(binprefix)red$(manext)
++	echo ".so ed$(manext)" > $(DESTDIR)$(mandir)red$(manext)
  
  # Make sure all installation directories, e.g. $(bindir) actually exist by
  # making them if necessary.
