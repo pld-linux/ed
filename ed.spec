@@ -16,6 +16,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-autoconf.patch
 Patch2:		%{name}-mkstemp.patch
 Patch3:		%{name}-debian.patch
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr
@@ -68,14 +69,14 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9nf NEWS POSIX README
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
