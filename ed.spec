@@ -98,6 +98,7 @@ chmod +w configure
 %configure
 
 rm -f ed.info
+rm -f stamp-h.in
 %{__make}
 
 %install
