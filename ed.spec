@@ -14,7 +14,9 @@ Release:	33
 License:	GPL
 Group:		Applications/Editors
 Source0:	ftp://ftp.gnu.org/pub/gnu/ed/%{name}-%{version}.tar.gz
+# Source0-md5:	ddd57463774cae9b50e70cd51221281b
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
+# Source1-md5:	13a5459ddffbd7f04aa3d67fce0d2134
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-autoconf.patch
 Patch2:		%{name}-mkstemp.patch
