@@ -66,7 +66,7 @@ duymaktadýrlar.
 
 %build
 chmod +w configure
-autoconf
+%{__autoconf}
 %configure
 
 rm -f ed.info
