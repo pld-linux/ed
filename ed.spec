@@ -107,8 +107,6 @@ rm -rf $RPM_BUILD_ROOT
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
-gzip -9nf NEWS POSIX README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -120,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc NEWS POSIX README
 %attr(755,root,root) /bin/*
 
 %{_infodir}/*info*
