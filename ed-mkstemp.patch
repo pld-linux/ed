@@ -1,0 +1,31 @@
+--- ed-0.2/buf.c.orig	Wed Nov 29 14:45:10 2000
++++ ed-0.2/buf.c	Wed Nov 29 15:13:16 2000
+@@ -200,15 +200,15 @@
+ int
+ open_sbuf ()
+ {
+-  char *mktemp ();
+   int u;
++  int filedes;
+ 
+   isbinary = newline_added = 0;
+   u = umask(077);
+   strcpy (sfn, "/tmp/ed.XXXXXX");
+-  if (mktemp (sfn) == NULL || (sfp = fopen (sfn, "w+")) == NULL)
++  if ((filedes=mkstemp(sfn)) == -1 || (sfp=fdopen(filedes, "w+")) == NULL)
+     {
+-      fprintf (stderr, "%s: %s\n", sfn, strerror (errno));
++      fprintf (stderr, "%s\n", strerror (errno));
+       sprintf (errmsg, "Cannot open temp file");
+       umask(u);
+       return ERR;
+@@ -226,7 +226,7 @@
+     {
+       if (fclose (sfp) < 0)
+ 	{
+-	  fprintf (stderr, "%s: %s\n", sfn, strerror (errno));
++	  fprintf (stderr, "%s\n", strerror (errno));
+ 	  sprintf (errmsg, "Cannot close temp file");
+ 	  return ERR;
+ 	}
+
