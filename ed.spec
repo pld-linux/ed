@@ -5,7 +5,7 @@ Summary(pl):	GNU edytor liniowy
 Summary(tr):	GNU satýr düzenleyici
 Name:		ed
 Version:	0.2
-Release:	14
+Release:	15
 Copyright:	GPL
 Group:		Applications/Editors
 Group(pl):	Aplikacje/Edytory
@@ -52,13 +52,16 @@ rm -f ed.info
 make 
 
 %install
-make prefix=$RPM_BUILD_ROOT/usr \
-    exec_prefix=$RPM_BUILD_ROOT install
+rm -rf $RPM_BUILD_ROOT
+make install prefix=$RPM_BUILD_ROOT/usr \
+    exec_prefix=$RPM_BUILD_ROOT \
+    mandir=$RPM_BUILD_ROOT%{_mandir}/man1 \
+    infodir=$RPM_BUILD_ROOT%{_infodir}
 
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/red.1
 echo .so ed.1 > $RPM_BUILD_ROOT%{_mandir}/man1/red.1
 
-gzip -9nf $RPM_BUILD_ROOT/usr/{man/man1/*,info/*info*} \
+gzip -9nf $RPM_BUILD_ROOT/usr/{share/man/man1/*,share/info/*info*} \
 	NEWS POSIX README
 
 %post
@@ -81,6 +84,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 
 %changelog
+* Mon Jun 07 1999 Jan Rêkorajski <baggins@pld.org.pl>
+  [0.2-15]
+- spec cleanup
+
 * Thu Apr 22 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.2-14]
 - recompiles on new rpm.
