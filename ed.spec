@@ -34,9 +34,9 @@ d'*nix. Certains programmes en ont besoin, mais en général, vous n'en aurez
 probablement pas l'utilité.
 
 %description -l pl
-Ed jest GNU implementacj± standardowego, pierwszego unixowego edytora.
-Czê¶æ starszych programów mo¿e jeszcze korzystaæ z niego ale wiêkszo¶æ
-ju¿ prawdopodobnie nie potrzebuje ed.
+Ed jest GNU implementacj± standardowego, pierwszego edytora uniksowego.
+Czê¶æ starszych programów mo¿e jeszcze z niego korzystaæ, ale wiêkszo¶æ
+ju¿ prawdopodobnie go nie potrzebuje.
 
 %description -l tr
 Bu paket UN*X'in en eski metin düzenleyicilerinden birini içermektedir. Bazý
