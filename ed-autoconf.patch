@@ -1,0 +1,44 @@
+diff -Nru ed-0.2/Makefile.in ed-0.2.new/Makefile.in
+--- ed-0.2/Makefile.in	Sat Nov 19 13:45:32 1994
++++ ed-0.2.new/Makefile.in	Thu Jun 17 23:30:43 1999
+@@ -99,20 +99,17 @@
+ 	$(TEXI2DVI) $(srcdir)/ed.texinfo
+ 
+ install: ed ed.info installdirs
+-	$(INSTALL_PROGRAM) ed $(bindir)/$(binprefix)ed
+-	rm -f $(bindir)/$(binprefix)red
+-	cd $(bindir); \
+-	  $(LN_S) $(binprefix)ed $(binprefix)red
+-	$(INSTALL_DATA) $(srcdir)/ed.info $(infodir)/$(binprefix)ed.info
+-	$(INSTALL_DATA) $(srcdir)/ed.1 $(mandir)/$(binprefix)ed$(manext)
+-	rm -f $(mandir)/$(binprefix)red$(manext)
++	$(INSTALL_PROGRAM) ed $(DESTDIR)$(bindir)/$(binprefix)ed
++	$(LN_S) ed $(DESTDIR)$(bindir)/red
++	$(INSTALL_DATA) $(srcdir)/ed.info $(DESTDIR)$(infodir)/$(binprefix)ed.info
++	$(INSTALL_DATA) $(srcdir)/ed.1 $(DESTDIR)$(mandir)/$(binprefix)ed$(manext)
+ 	cd $(mandir); \
+-	  $(LN_S) $(binprefix)ed$(manext) $(binprefix)red$(manext)
++	echo ".so ed$(manext)" > $(DESTDIR)$(binprefix)red$(manext)
+ 
+ # Make sure all installation directories, e.g. $(bindir) actually exist by
+ # making them if necessary.
+ installdirs:
+-	$(srcdir)/mkinstalldirs $(bindir) $(infodir) $(mandir)
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(infodir) $(DESTDIR)$(mandir)
+ 
+ uninstall: all
+ 	rm -f $(bindir)/$(binprefix)ed $(bindir)/$(binprefix)red
+diff -Nru ed-0.2/Makefile.in ed-0.2.new/Makefile.in
+--- ed-0.2/Makefile.in	Fri Jun 18 00:44:39 1999
++++ ed-0.2.new/Makefile.in	Fri Jun 18 00:06:21 1999
+@@ -41,8 +41,8 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir = $(exec_prefix)/bin
+-infodir = $(prefix)/info
+-mandir = $(prefix)/man/man1
++infodir = @infodir@
++mandir = @mandir@/man1
+ manext = .1
+ 
+ CPPFLAGS = -I. -I$(srcdir) $(DEFS) @CPPFLAGS@
