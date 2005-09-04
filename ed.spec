@@ -28,8 +28,7 @@ BuildRequires:	autoconf
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr
-%define		_exec_prefix	/
+%define		_bindir		/bin
 
 %description
 This is the GNU line editor. It is an implementation of one of the
@@ -126,8 +125,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS POSIX README
-%attr(755,root,root) /bin/*
-
+%attr(755,root,root) %{_bindir}/*
 %{_infodir}/*info*
 %{_mandir}/man1/*
 %lang(nl) %{_mandir}/nl/man1/*
