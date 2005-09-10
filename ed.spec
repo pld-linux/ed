@@ -28,6 +28,7 @@ BuildRequires:	autoconf
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_exec_prefix	/
 %define		_bindir		/bin
 
 %description
@@ -124,7 +125,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS POSIX README
+%doc ChangeLog NEWS POSIX README THANKS TODO
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/*info*
 %{_mandir}/man1/*
