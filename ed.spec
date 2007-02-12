@@ -1,13 +1,13 @@
 Summary:	GNU Line Editor
-Summary(de.UTF-8):   GNU-Zeileneditor
-Summary(es.UTF-8):   Editor de líneas de la GNU
-Summary(fr.UTF-8):   Éditeur ligne de GNU
-Summary(ja.UTF-8):   GNU ラインエディタ。
-Summary(pl.UTF-8):   GNU edytor liniowy
-Summary(pt_BR.UTF-8):   Editor de linhas da GNU
-Summary(ru.UTF-8):   Строчный редактор GNU
-Summary(tr.UTF-8):   GNU satır düzenleyici
-Summary(uk.UTF-8):   Рядковий редактор GNU
+Summary(de.UTF-8):	GNU-Zeileneditor
+Summary(es.UTF-8):	Editor de líneas de la GNU
+Summary(fr.UTF-8):	Éditeur ligne de GNU
+Summary(ja.UTF-8):	GNU ラインエディタ。
+Summary(pl.UTF-8):	GNU edytor liniowy
+Summary(pt_BR.UTF-8):	Editor de linhas da GNU
+Summary(ru.UTF-8):	Строчный редактор GNU
+Summary(tr.UTF-8):	GNU satır düzenleyici
+Summary(uk.UTF-8):	Рядковий редактор GNU
 Name:		ed
 Version:	0.2
 Release:	36
