@@ -1,13 +1,13 @@
 Summary:	GNU Line Editor
-Summary(de):	GNU-Zeileneditor
-Summary(es):	Editor de lМneas de la GNU
-Summary(fr):	иditeur ligne de GNU
-Summary(ja):	GNU ╔И╔╓╔С╔╗╔г╔ё╔©║ё
-Summary(pl):	GNU edytor liniowy
-Summary(pt_BR):	Editor de linhas da GNU
-Summary(ru):	Строчный редактор GNU
-Summary(tr):	GNU satЩr dЭzenleyici
-Summary(uk):	Рядковий редактор GNU
+Summary(de.UTF-8):   GNU-Zeileneditor
+Summary(es.UTF-8):   Editor de lц╜neas de la GNU
+Summary(fr.UTF-8):   ц┴diteur ligne de GNU
+Summary(ja.UTF-8):   GNU Ц┐╘Ц┌╓Ц┐ЁЦ┌╗Ц┐┤Ц┌ёЦ┌©Ц─┌
+Summary(pl.UTF-8):   GNU edytor liniowy
+Summary(pt_BR.UTF-8):   Editor de linhas da GNU
+Summary(ru.UTF-8):   п║я┌я─п╬я┤п╫я▀п╧ я─п╣п╢п╟п╨я┌п╬я─ GNU
+Summary(tr.UTF-8):   GNU satд╠r dц╪zenleyici
+Summary(uk.UTF-8):   п═я▐п╢п╨п╬п╡п╦п╧ я─п╣п╢п╟п╨я┌п╬я─ GNU
 Name:		ed
 Version:	0.2
 Release:	36
@@ -36,57 +36,57 @@ This is the GNU line editor. It is an implementation of one of the
 first editors under *nix. Some programs rely on it, but in general you
 probably don't *need* it.
 
-%description -l de
+%description -l de.UTF-8
 Dies ist der GNU-Zeileneditor, eine Implementierung einer der ersten
 Editoren unter *nix. Manche Programme verlassen sich darauf, i.a.
 *brauchen* Sie ihn wahrscheinlich nicht.
 
-%description -l es
-Este es GNU editor de lМnea. Es un soporte a uno de los primeros
-editores para *nix. Algunos de los programas cuentan con Иl, pero de
+%description -l es.UTF-8
+Este es GNU editor de lц╜nea. Es un soporte a uno de los primeros
+editores para *nix. Algunos de los programas cuentan con ц╘l, pero de
 manera general, es muy probable que no lo *necesites*.
 
-%description -l fr
-иditeur ligne de GNU. C'est une implantation de l'un des premiers
-Иditeurs d'*nix. Certains programmes en ont besoin, mais en gИnИral,
-vous n'en aurez probablement pas l'utilitИ.
+%description -l fr.UTF-8
+ц┴diteur ligne de GNU. C'est une implantation de l'un des premiers
+ц╘diteurs d'*nix. Certains programmes en ont besoin, mais en gц╘nц╘ral,
+vous n'en aurez probablement pas l'utilitц╘.
 
-%description -l ja
-ed ╓о╧т╩ь╦Ч╓н╔ф╔╜╔╧╔х╔╗╔г╔ё╔©╓г║╒( бпоце╙╓г╓Б╔╥╔╖╔К╔╧╔╞╔Й╔в╔х╥пмЁ╓г╓Б
-) ╔ф╔╜╔╧╔х╔у╔║╔╓╔К╓ню╦ю╝║╒и╫╪╗║╒╫╓ю╣╓кмя╓╓╓И╓Л╓ч╓╧║ё╪Г╓йлэе╙╓х╓╥╓ф╓о║╒
-╔у╔К╔╧╔╞╔Й║╪╔С╔╗╔г╔ё╔© ( нЦ╓╗╓п emacs ╓Д vi ) ╓к╓Х╓ц╓ф╓й╓╣╓Л╓ф╓╓╓К
-дл╬О╓нмЬмя╓к ed ╓Рцж╓╜╢╧╓╗╓ф╓╜╓©╓Ё╓х╓г╓╧║ё
+%description -l ja.UTF-8
+ed Ц│╞Х║▄Ф▄┤Е░▒Ц│╝Ц┐├Ц┌╜Ц┌╧Ц┐┬Ц┌╗Ц┐┤Ц┌ёЦ┌©Ц│╖Ц─│( Е╞╬Х╘╠Г └Ц│╖Ц┌┌Ц┌╥Ц┌╖Ц┐╚Ц┌╧Ц┌╞Ц┐╙Ц┐≈Ц┐┬Г╣▄Г■╠Ц│╖Ц┌┌
+) Ц┐├Ц┌╜Ц┌╧Ц┐┬Ц┐∙Ц┌║Ц┌╓Ц┐╚Ц│╝Г■÷Ф┬░Ц─│Х║╗Г╓╨Ц─│Д©╝Ф╜ёЦ│╚Г■╗Ц│└Ц┌┴Ц┌▄Ц│╬Ц│≥Ц─┌Д╦╩Ц│╙Г⌡╝Г └Ц│╗Ц│≈Ц│╕Ц│╞Ц─│
+Ц┐∙Ц┐╚Ц┌╧Ц┌╞Ц┐╙Ц┐╪Ц┐ЁЦ┌╗Ц┐┤Ц┌ёЦ┌© ( Д╬▀Ц│┬Ц│╟ emacs Ц┌└ vi ) Ц│╚Ц┌┬Ц│ёЦ│╕Ц│╙Ц│∙Ц┌▄Ц│╕Ц│└Ц┌▀
+И─ Е╦╦Ц│╝Е┬╘Г■╗Ц│╚ ed Ц┌▓Г╫╝Ц│█Ф▐⌡Ц│┬Ц│╕Ц│█Ц│÷Ц│⌠Ц│╗Ц│╖Ц│≥Ц─┌
 
-ed ╓о╫И╢Э╓н Unix ╔╗╔г╔ё╔©╓г║╒╓╓╓М╓╓╓М╓й╔в╔М╔╟╔И╔Ю╓к╩х╓О╓Л╓ф╓╜╓ч╓╥╓©║ё
-╓╥╓╚╓╥║╒╟Лхл╓к╓об©й╛╔╓╔С╔╧╔х║╪╔К╓╧╓Ки╛мв╓о╓й╓╞║╒
-б©й╛╩х╓╓╓Ё╓й╓╧╓Ё╓х╓Б╓й╓╓╓г╓╥╓Г╓╕║ё
+ed Ц│╞Е┬²Ф°÷Ц│╝ Unix Ц┌╗Ц┐┤Ц┌ёЦ┌©Ц│╖Ц─│Ц│└Ц┌█Ц│└Ц┌█Ц│╙Ц┐≈Ц┐╜Ц┌╟Ц┐╘Ц┐═Ц│╚Д╫©Ц┌▐Ц┌▄Ц│╕Ц│█Ц│╬Ц│≈Ц│÷Ц─┌
+Ц│≈Ц│▀Ц│≈Ц─│Д╦─Х┬╛Ц│╚Ц│╞Е╓ Е┬├Ц┌╓Ц┐ЁЦ┌╧Ц┐┬Ц┐╪Ц┐╚Ц│≥Ц┌▀Е©┘Х╕│Ц│╞Ц│╙Ц│▐Ц─│
+Е╓ Е┬├Д╫©Ц│└Ц│⌠Ц│╙Ц│≥Ц│⌠Ц│╗Ц┌┌Ц│╙Ц│└Ц│╖Ц│≈Ц┌┤Ц│├Ц─┌
 
-%description -l pl
-Ed jest GNU implementacj╠ standardowego, pierwszego edytora
-uniksowego. CzЙ╤Ф starszych programСw mo©e jeszcze z niego korzystaФ,
-ale wiЙkszo╤Ф ju© prawdopodobnie go nie potrzebuje.
+%description -l pl.UTF-8
+Ed jest GNU implementacjд┘ standardowego, pierwszego edytora
+uniksowego. Czд≥е⌡д┤ starszych programцЁw moе╪e jeszcze z niego korzystaд┤,
+ale wiд≥kszoе⌡д┤ juе╪ prawdopodobnie go nie potrzebuje.
 
-%description -l pt_BR
-Este И o GNU editor de linha. и uma implementaГЦo de um dos primeiros
-editores para *nix. Alguns programas contam com ele, mas no geral vocЙ
-provavelmente nЦo irА *precisar* dele.
+%description -l pt_BR.UTF-8
+Este ц╘ o GNU editor de linha. ц┴ uma implementaц╖цёo de um dos primeiros
+editores para *nix. Alguns programas contam com ele, mas no geral vocц╙
+provavelmente nцёo irц║ *precisar* dele.
 
-%description -l uk
-Ed - це рядково-ор╕╓нтований текстовий редактор, що використову╓ться
-для створення, показу та модиф╕кац╕╖ текстових файл╕в (як
-╕нтерактивно, так ╕ з╕ скрипт╕в). Для б╕льшост╕ ц╕лей ed був зам╕нений
-повноекранними редакторами (наприклад, joe, vi, emacs).
+%description -l uk.UTF-8
+Ed - я├п╣ я─я▐п╢п╨п╬п╡п╬-п╬я─я√я■п╫я┌п╬п╡п╟п╫п╦п╧ я┌п╣п╨я│я┌п╬п╡п╦п╧ я─п╣п╢п╟п╨я┌п╬я─, я┴п╬ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я■я┌я▄я│я▐
+п╢п╩я▐ я│я┌п╡п╬я─п╣п╫п╫я▐, п©п╬п╨п╟п╥я┐ я┌п╟ п╪п╬п╢п╦я└я√п╨п╟я├я√я≈ я┌п╣п╨я│я┌п╬п╡п╦я┘ я└п╟п╧п╩я√п╡ (я▐п╨
+я√п╫я┌п╣я─п╟п╨я┌п╦п╡п╫п╬, я┌п╟п╨ я√ п╥я√ я│п╨я─п╦п©я┌я√п╡). п■п╩я▐ п╠я√п╩я▄я┬п╬я│я┌я√ я├я√п╩п╣п╧ ed п╠я┐п╡ п╥п╟п╪я√п╫п╣п╫п╦п╧
+п©п╬п╡п╫п╬п╣п╨я─п╟п╫п╫п╦п╪п╦ я─п╣п╢п╟п╨я┌п╬я─п╟п╪п╦ (п╫п╟п©я─п╦п╨п╩п╟п╢, joe, vi, emacs).
 
-%description -l tr
-Bu paket UN*X'in en eski metin dЭzenleyicilerinden birini
-iГermektedir. BazЩ yazЩlЩmlar hala bu programa gereksinim
-duymaktadЩrlar.
+%description -l tr.UTF-8
+Bu paket UN*X'in en eski metin dц╪zenleyicilerinden birini
+iц╖ermektedir. Bazд╠ yazд╠lд╠mlar hala bu programa gereksinim
+duymaktadд╠rlar.
 
-%description -l ru
-Ed - это строчно-ориентированный текстовый редактор, используемый для
-создания, показа и модификации текстовых файлов (как интерактивно, так
-и при помощи скриптов). Для большинства целей ed был заменен
-полноэкранными редакторами (например, joe, vi, emacs).
+%description -l ru.UTF-8
+Ed - я█я┌п╬ я│я┌я─п╬я┤п╫п╬-п╬я─п╦п╣п╫я┌п╦я─п╬п╡п╟п╫п╫я▀п╧ я┌п╣п╨я│я┌п╬п╡я▀п╧ я─п╣п╢п╟п╨я┌п╬я─, п╦я│п©п╬п╩я▄п╥я┐п╣п╪я▀п╧ п╢п╩я▐
+я│п╬п╥п╢п╟п╫п╦я▐, п©п╬п╨п╟п╥п╟ п╦ п╪п╬п╢п╦я└п╦п╨п╟я├п╦п╦ я┌п╣п╨я│я┌п╬п╡я▀я┘ я└п╟п╧п╩п╬п╡ (п╨п╟п╨ п╦п╫я┌п╣я─п╟п╨я┌п╦п╡п╫п╬, я┌п╟п╨
+п╦ п©я─п╦ п©п╬п╪п╬я┴п╦ я│п╨я─п╦п©я┌п╬п╡). п■п╩я▐ п╠п╬п╩я▄я┬п╦п╫я│я┌п╡п╟ я├п╣п╩п╣п╧ ed п╠я▀п╩ п╥п╟п╪п╣п╫п╣п╫
+п©п╬п╩п╫п╬я█п╨я─п╟п╫п╫я▀п╪п╦ я─п╣п╢п╟п╨я┌п╬я─п╟п╪п╦ (п╫п╟п©я─п╦п╪п╣я─, joe, vi, emacs).
 
 %prep
 %setup  -q
