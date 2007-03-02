@@ -1,0 +1,11 @@
+--- ed-0.2/Makefile.in.orig	2007-03-02 14:28:16.000000000 +0100
++++ ed-0.2/Makefile.in	2007-03-02 14:28:30.000000000 +0100
+@@ -66,7 +66,7 @@
+ all: ed
+ 
+ ed: $(OBJECTS)
+-	$(CC) $(LDFLAGS) -o ed $(OBJECTS) $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o ed $(OBJECTS) $(LIBS)
+ 
+ buf.o: ed.h config.h
+ ed.o: ed.h config.h
