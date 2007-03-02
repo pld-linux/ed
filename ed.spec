@@ -23,6 +23,7 @@ Patch2:		%{name}-mkstemp.patch
 Patch3:		%{name}-debian.patch
 Patch4:		%{name}-configure.patch
 Patch5:		%{name}-regex.patch
+Patch6:		%{name}-multilib.patch
 URL:		http://www.gnu.org/software/ed/
 BuildRequires:	autoconf
 BuildRequires:	texinfo
@@ -96,6 +97,7 @@ Ed - это строчно-ориентированный текстовый р�
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 chmod +w configure
