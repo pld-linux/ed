@@ -9,23 +9,19 @@ Summary(ru.UTF-8):	Строчный редактор GNU
 Summary(tr.UTF-8):	GNU satır düzenleyici
 Summary(uk.UTF-8):	Рядковий редактор GNU
 Name:		ed
-Version:	0.2
-Release:	37
-License:	GPL
+Version:	0.6
+Release:	1
+License:	GPL v3+
 Group:		Applications/Editors
-Source0:	ftp://ftp.gnu.org/pub/gnu/ed/%{name}-%{version}.tar.gz
-# Source0-md5:	ddd57463774cae9b50e70cd51221281b
+Source0:	ftp://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.bz2
+# Source0-md5:	95ae976ffc36e5b881cc7a591628a9ce
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	13a5459ddffbd7f04aa3d67fce0d2134
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-autoconf.patch
-Patch2:		%{name}-mkstemp.patch
-Patch3:		%{name}-debian.patch
-Patch4:		%{name}-configure.patch
-Patch5:		%{name}-regex.patch
-Patch6:		%{name}-multilib.patch
+Patch2:		%{name}-debian.patch
+Patch3:		%{name}-multilib.patch
 URL:		http://www.gnu.org/software/ed/
-BuildRequires:	autoconf
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -90,28 +86,24 @@ Ed - это строчно-ориентированный текстовый р�
 полноэкранными редакторами (например, joe, vi, emacs).
 
 %prep
-%setup  -q
+%setup -q
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
+
+rm -f doc/ed.info
 
 %build
-chmod +w configure
-%{__autoconf}
+# not autoconf configure, but options compatible
 %configure
 
-rm -f ed.info
-rm -f stamp-h.in
-%{__make}
+%{__make} all doc
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} install install-man \
 	DESTDIR=$RPM_BUILD_ROOT
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
@@ -127,7 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog NEWS POSIX README THANKS TODO
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/*info*
 %{_mandir}/man1/*
