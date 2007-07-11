@@ -1,22 +1,14 @@
-diff -Nru ed-0.2/ed.texinfo ed-0.2.new/ed.texinfo
---- ed-0.2/ed.texinfo	Sat Nov 19 13:38:01 1994
-+++ ed-0.2.new/ed.texinfo	Thu Apr  1 19:16:34 1999
-@@ -60,8 +60,17 @@
- @end titlepage
+--- ed-0.6/doc/ed.texinfo.orig	2007-06-29 02:10:39.000000000 +0200
++++ ed-0.6/doc/ed.texinfo	2007-07-11 07:29:59.024833061 +0200
+@@ -8,9 +8,9 @@
+ @set UPDATED 29 June 2007
+ @set VERSION 0.6
  
- @ifinfo
-+@format
-+@dircategory Miscellaneous:
-+@direntry
-+* ed: (ed).				The GNU Line Editor
-+@end direntry
-+@end format
-+@end ifinfo
-+
-+@ifinfo
- @node Top, Intro, (dir), (dir)
--@top
-+@top ed
+-@dircategory Basics
++@dircategory File utilities:
+ @direntry
+-* Ed: (ed).                     The GNU line editor.
++* Ed: (ed).				The GNU line editor
+ @end direntry
  
- This info file documents the @code{ed} text editor, as of release 0.2.
- You may find in this document:
+ @copying

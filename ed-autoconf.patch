@@ -1,44 +1,11 @@
-diff -Nru ed-0.2/Makefile.in ed-0.2.new/Makefile.in
---- ed-0.2/Makefile.in	Sat Nov 19 13:45:32 1994
-+++ ed-0.2.new/Makefile.in	Thu Jun 17 23:30:43 1999
-@@ -99,20 +99,17 @@
- 	$(TEXI2DVI) $(srcdir)/ed.texinfo
+--- ed-0.6/Makefile.in.orig	2007-07-11 07:30:30.566630525 +0200
++++ ed-0.6/Makefile.in	2007-07-11 07:34:51.909523607 +0200
+@@ -59,7 +59,7 @@
+ 	if test ! -d $(DESTDIR)$(mandir)/man1 ; then $(INSTALL) -d $(DESTDIR)$(mandir)/man1 ; fi
+ 	$(INSTALL_DATA) $(VPATH)/doc/$(progname).1 $(DESTDIR)$(mandir)/man1/$(progname).1
+ 	-rm -f $(DESTDIR)$(mandir)/man1/r$(progname).1
+-	cd $(DESTDIR)$(mandir)/man1 ; ln $(progname).1 r$(progname).1
++	cd $(DESTDIR)$(mandir)/man1 ; echo ".so $(progname).1" > r$(progname).1
  
- install: ed ed.info installdirs
--	$(INSTALL_PROGRAM) ed $(bindir)/$(binprefix)ed
--	rm -f $(bindir)/$(binprefix)red
--	cd $(bindir); \
--	  $(LN_S) $(binprefix)ed $(binprefix)red
--	$(INSTALL_DATA) $(srcdir)/ed.info $(infodir)/$(binprefix)ed.info
--	$(INSTALL_DATA) $(srcdir)/ed.1 $(mandir)/$(binprefix)ed$(manext)
--	rm -f $(mandir)/$(binprefix)red$(manext)
-+	$(INSTALL_PROGRAM) ed $(DESTDIR)$(bindir)/$(binprefix)ed
-+	$(LN_S) ed $(DESTDIR)$(bindir)/red
-+	$(INSTALL_DATA) $(srcdir)/ed.info $(DESTDIR)$(infodir)/$(binprefix)ed.info
-+	$(INSTALL_DATA) $(srcdir)/ed.1 $(DESTDIR)$(mandir)/$(binprefix)ed$(manext)
- 	cd $(mandir); \
--	  $(LN_S) $(binprefix)ed$(manext) $(binprefix)red$(manext)
-+	echo ".so ed$(manext)" > $(DESTDIR)$(mandir)/red$(manext)
- 
- # Make sure all installation directories, e.g. $(bindir) actually exist by
- # making them if necessary.
- installdirs:
--	$(srcdir)/mkinstalldirs $(bindir) $(infodir) $(mandir)
-+	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(infodir) $(DESTDIR)$(mandir)
- 
- uninstall: all
- 	rm -f $(bindir)/$(binprefix)ed $(bindir)/$(binprefix)red
-diff -Nru ed-0.2/Makefile.in ed-0.2.new/Makefile.in
---- ed-0.2/Makefile.in	Fri Jun 18 00:44:39 1999
-+++ ed-0.2.new/Makefile.in	Fri Jun 18 00:06:21 1999
-@@ -41,8 +41,8 @@
- prefix = @prefix@
- exec_prefix = @exec_prefix@
- bindir = $(exec_prefix)/bin
--infodir = $(prefix)/info
--mandir = $(prefix)/man/man1
-+infodir = @infodir@
-+mandir = @mandir@/man1
- manext = .1
- 
- CPPFLAGS = -I. -I$(srcdir) $(DEFS) @CPPFLAGS@
+ install-strip : all
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' install
