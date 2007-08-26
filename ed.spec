@@ -9,18 +9,17 @@ Summary(ru.UTF-8):	Строчный редактор GNU
 Summary(tr.UTF-8):	GNU satır düzenleyici
 Summary(uk.UTF-8):	Рядковий редактор GNU
 Name:		ed
-Version:	0.7
+Version:	0.8
 Release:	1
 License:	GPL v3+
 Group:		Applications/Editors
 Source0:	ftp://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.bz2
-# Source0-md5:	757f00d24975953da15007c04fb39c2e
+# Source0-md5:	b359451fb32097974484b5ba7c19f5fb
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	13a5459ddffbd7f04aa3d67fce0d2134
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-autoconf.patch
-Patch2:		%{name}-debian.patch
-Patch3:		%{name}-multilib.patch
+Patch2:		%{name}-multilib.patch
 URL:		http://www.gnu.org/software/ed/
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -90,7 +89,6 @@ Ed - это строчно-ориентированный текстовый р�
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 rm -f doc/ed.info
 
