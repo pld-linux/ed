@@ -9,12 +9,12 @@ Summary(ru.UTF-8):	Строчный редактор GNU
 Summary(tr.UTF-8):	GNU satır düzenleyici
 Summary(uk.UTF-8):	Рядковий редактор GNU
 Name:		ed
-Version:	0.8
+Version:	0.9
 Release:	1
 License:	GPL v3+
 Group:		Applications/Editors
 Source0:	ftp://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.bz2
-# Source0-md5:	b359451fb32097974484b5ba7c19f5fb
+# Source0-md5:	fb0c1c63ec13d8516733dd1d85c76473
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	13a5459ddffbd7f04aa3d67fce0d2134
 Patch0:		%{name}-info.patch
@@ -109,17 +109,18 @@ bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_infodir}/*info*
+%attr(755,root,root) %{_bindir}/ed
+%attr(755,root,root) %{_bindir}/red
+%{_infodir}/ed.info*
 %{_mandir}/man1/*
 %lang(nl) %{_mandir}/nl/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
