@@ -13,7 +13,7 @@ Version:	0.9
 Release:	1
 License:	GPL v3+
 Group:		Applications/Editors
-Source0:	ftp://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.bz2
 # Source0-md5:	fb0c1c63ec13d8516733dd1d85c76473
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	13a5459ddffbd7f04aa3d67fce0d2134
