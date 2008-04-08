@@ -1,129 +1,126 @@
 Summary:	GNU Line Editor
-Summary(de):	GNU-Zeileneditor
-Summary(es):	Editor de líneas de la GNU
-Summary(fr):	Éditeur ligne de GNU
-Summary(ja):	GNU ¥é¥¤¥ó¥¨¥Ç¥£¥¿¡£
-Summary(pl):	GNU edytor liniowy
-Summary(pt_BR):	Editor de linhas da GNU
-Summary(ru):	óÔÒÏÞÎÙÊ ÒÅÄÁËÔÏÒ GNU
-Summary(tr):	GNU satýr düzenleyici
-Summary(uk):	òÑÄËÏ×ÉÊ ÒÅÄÁËÔÏÒ GNU
+Summary(de.UTF-8):	GNU-Zeileneditor
+Summary(es.UTF-8):	Editor de lÃ­neas de la GNU
+Summary(fr.UTF-8):	Ã‰diteur ligne de GNU
+Summary(ja.UTF-8):	GNU ãƒ©ã‚¤ãƒ³ã‚¨ãƒ‡ã‚£ã‚¿ã€‚
+Summary(pl.UTF-8):	GNU edytor liniowy
+Summary(pt_BR.UTF-8):	Editor de linhas da GNU
+Summary(ru.UTF-8):	Ð¡Ñ‚Ñ€Ð¾Ñ‡Ð½Ñ‹Ð¹ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¾Ñ€ GNU
+Summary(tr.UTF-8):	GNU satÄ±r dÃ¼zenleyici
+Summary(uk.UTF-8):	Ð ÑÐ´ÐºÐ¾Ð²Ð¸Ð¹ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¾Ñ€ GNU
 Name:		ed
-Version:	0.2
-Release:	30
-License:	GPL
+Version:	0.9
+Release:	1
+License:	GPL v3+
 Group:		Applications/Editors
-Source0:	ftp://ftp.gnu.org/pub/gnu/ed/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.bz2
+# Source0-md5:	fb0c1c63ec13d8516733dd1d85c76473
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
+# Source1-md5:	13a5459ddffbd7f04aa3d67fce0d2134
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-autoconf.patch
-Patch2:		%{name}-mkstemp.patch
-Patch3:		%{name}-debian.patch
-Patch4:		%{name}-configure.patch
+Patch2:		%{name}-multilib.patch
 URL:		http://www.gnu.org/software/ed/
-BuildRequires:	autoconf
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr
 %define		_exec_prefix	/
+%define		_bindir		/bin
 
 %description
 This is the GNU line editor. It is an implementation of one of the
 first editors under *nix. Some programs rely on it, but in general you
 probably don't *need* it.
 
-%description -l de
+%description -l de.UTF-8
 Dies ist der GNU-Zeileneditor, eine Implementierung einer der ersten
 Editoren unter *nix. Manche Programme verlassen sich darauf, i.a.
 *brauchen* Sie ihn wahrscheinlich nicht.
 
-%description -l es
-Este es GNU editor de línea. Es un soporte a uno de los primeros
-editores para *nix. Algunos de los programas cuentan con él, pero de
+%description -l es.UTF-8
+Este es GNU editor de lÃ­nea. Es un soporte a uno de los primeros
+editores para *nix. Algunos de los programas cuentan con Ã©l, pero de
 manera general, es muy probable que no lo *necesites*.
 
-%description -l fr
-Éditeur ligne de GNU. C'est une implantation de l'un des premiers
-éditeurs d'*nix. Certains programmes en ont besoin, mais en général,
-vous n'en aurez probablement pas l'utilité.
+%description -l fr.UTF-8
+Ã‰diteur ligne de GNU. C'est une implantation de l'un des premiers
+Ã©diteurs d'*nix. Certains programmes en ont besoin, mais en gÃ©nÃ©ral,
+vous n'en aurez probablement pas l'utilitÃ©.
 
-%description -l ja
-ed ¤Ï¹Ô»Ø¸þ¤Î¥Æ¥­¥¹¥È¥¨¥Ç¥£¥¿¤Ç¡¢( ÂÐÏÃÅª¤Ç¤â¥·¥§¥ë¥¹¥¯¥ê¥×¥È·ÐÍ³¤Ç¤â
-) ¥Æ¥­¥¹¥È¥Õ¥¡¥¤¥ë¤ÎÀ¸À®¡¢É½¼¨¡¢½¤Àµ¤ËÍÑ¤¤¤é¤ì¤Þ¤¹¡£¼ç¤ÊÌÜÅª¤È¤·¤Æ¤Ï¡¢
-¥Õ¥ë¥¹¥¯¥ê¡¼¥ó¥¨¥Ç¥£¥¿ ( Îã¤¨¤Ð emacs ¤ä vi ) ¤Ë¤è¤Ã¤Æ¤Ê¤µ¤ì¤Æ¤¤¤ë
-ÄÌ¾ï¤ÎÍøÍÑ¤Ë ed ¤òÃÖ¤­´¹¤¨¤Æ¤­¤¿¤³¤È¤Ç¤¹¡£
+%description -l ja.UTF-8
+ed ã¯è¡ŒæŒ‡å‘ã®ãƒ†ã‚­ã‚¹ãƒˆã‚¨ãƒ‡ã‚£ã‚¿ã§ã€( å¯¾è©±çš„ã§ã‚‚ã‚·ã‚§ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆçµŒç”±ã§ã‚‚
+) ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã®ç”Ÿæˆã€è¡¨ç¤ºã€ä¿®æ­£ã«ç”¨ã„ã‚‰ã‚Œã¾ã™ã€‚ä¸»ãªç›®çš„ã¨ã—ã¦ã¯ã€
+ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚¨ãƒ‡ã‚£ã‚¿ ( ä¾‹ãˆã° emacs ã‚„ vi ) ã«ã‚ˆã£ã¦ãªã•ã‚Œã¦ã„ã‚‹
+é€šå¸¸ã®åˆ©ç”¨ã« ed ã‚’ç½®ãæ›ãˆã¦ããŸã“ã¨ã§ã™ã€‚
 
-ed ¤Ï½é´ü¤Î Unix ¥¨¥Ç¥£¥¿¤Ç¡¢¤¤¤í¤¤¤í¤Ê¥×¥í¥°¥é¥à¤Ë»È¤ï¤ì¤Æ¤­¤Þ¤·¤¿¡£
-¤·¤«¤·¡¢°ìÈÌ¤Ë¤ÏÂ¿Ê¬¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ëÉ¬Í×¤Ï¤Ê¤¯¡¢
-Â¿Ê¬»È¤¤¤³¤Ê¤¹¤³¤È¤â¤Ê¤¤¤Ç¤·¤ç¤¦¡£
+ed ã¯åˆæœŸã® Unix ã‚¨ãƒ‡ã‚£ã‚¿ã§ã€ã„ã‚ã„ã‚ãªãƒ—ãƒ­ã‚°ãƒ©ãƒ ã«ä½¿ã‚ã‚Œã¦ãã¾ã—ãŸã€‚
+ã—ã‹ã—ã€ä¸€èˆ¬ã«ã¯å¤šåˆ†ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹å¿…è¦ã¯ãªãã€
+å¤šåˆ†ä½¿ã„ã“ãªã™ã“ã¨ã‚‚ãªã„ã§ã—ã‚‡ã†ã€‚
 
-%description -l pl
-Ed jest GNU implementacj± standardowego, pierwszego edytora
-uniksowego. Czê¶æ starszych programów mo¿e jeszcze z niego korzystaæ,
-ale wiêkszo¶æ ju¿ prawdopodobnie go nie potrzebuje.
+%description -l pl.UTF-8
+Ed jest GNU implementacjÄ… standardowego, pierwszego edytora
+uniksowego. CzÄ™Å›Ä‡ starszych programÃ³w moÅ¼e jeszcze z niego korzystaÄ‡,
+ale wiÄ™kszoÅ›Ä‡ juÅ¼ prawdopodobnie go nie potrzebuje.
 
-%description -l pt_BR
-Este é o GNU editor de linha. É uma implementação de um dos primeiros
-editores para *nix. Alguns programas contam com ele, mas no geral você
-provavelmente não irá *precisar* dele.
+%description -l pt_BR.UTF-8
+Este Ã© o GNU editor de linha. Ã‰ uma implementaÃ§Ã£o de um dos primeiros
+editores para *nix. Alguns programas contam com ele, mas no geral vocÃª
+provavelmente nÃ£o irÃ¡ *precisar* dele.
 
-%description -l uk
-Ed - ÃÅ ÒÑÄËÏ×Ï-ÏÒ¦¤ÎÔÏ×ÁÎÉÊ ÔÅËÓÔÏ×ÉÊ ÒÅÄÁËÔÏÒ, ÝÏ ×ÉËÏÒÉÓÔÏ×Õ¤ÔØÓÑ
-ÄÌÑ ÓÔ×ÏÒÅÎÎÑ, ÐÏËÁÚÕ ÔÁ ÍÏÄÉÆ¦ËÁÃ¦§ ÔÅËÓÔÏ×ÉÈ ÆÁÊÌ¦× (ÑË
-¦ÎÔÅÒÁËÔÉ×ÎÏ, ÔÁË ¦ Ú¦ ÓËÒÉÐÔ¦×). äÌÑ Â¦ÌØÛÏÓÔ¦ Ã¦ÌÅÊ ed ÂÕ× ÚÁÍ¦ÎÅÎÉÊ
-ÐÏ×ÎÏÅËÒÁÎÎÉÍÉ ÒÅÄÁËÔÏÒÁÍÉ (ÎÁÐÒÉËÌÁÄ, joe, vi, emacs).
+%description -l uk.UTF-8
+Ed - Ñ†Ðµ Ñ€ÑÐ´ÐºÐ¾Ð²Ð¾-Ð¾Ñ€Ñ–Ñ”Ð½Ñ‚Ð¾Ð²Ð°Ð½Ð¸Ð¹ Ñ‚ÐµÐºÑÑ‚Ð¾Ð²Ð¸Ð¹ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¾Ñ€, Ñ‰Ð¾ Ð²Ð¸ÐºÐ¾Ñ€Ð¸ÑÑ‚Ð¾Ð²ÑƒÑ”Ñ‚ÑŒÑÑ
+Ð´Ð»Ñ ÑÑ‚Ð²Ð¾Ñ€ÐµÐ½Ð½Ñ, Ð¿Ð¾ÐºÐ°Ð·Ñƒ Ñ‚Ð° Ð¼Ð¾Ð´Ð¸Ñ„Ñ–ÐºÐ°Ñ†Ñ–Ñ— Ñ‚ÐµÐºÑÑ‚Ð¾Ð²Ð¸Ñ… Ñ„Ð°Ð¹Ð»Ñ–Ð² (ÑÐº
+Ñ–Ð½Ñ‚ÐµÑ€Ð°ÐºÑ‚Ð¸Ð²Ð½Ð¾, Ñ‚Ð°Ðº Ñ– Ð·Ñ– ÑÐºÑ€Ð¸Ð¿Ñ‚Ñ–Ð²). Ð”Ð»Ñ Ð±Ñ–Ð»ÑŒÑˆÐ¾ÑÑ‚Ñ– Ñ†Ñ–Ð»ÐµÐ¹ ed Ð±ÑƒÐ² Ð·Ð°Ð¼Ñ–Ð½ÐµÐ½Ð¸Ð¹
+Ð¿Ð¾Ð²Ð½Ð¾ÐµÐºÑ€Ð°Ð½Ð½Ð¸Ð¼Ð¸ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¾Ñ€Ð°Ð¼Ð¸ (Ð½Ð°Ð¿Ñ€Ð¸ÐºÐ»Ð°Ð´, joe, vi, emacs).
 
-%description -l tr
-Bu paket UN*X'in en eski metin düzenleyicilerinden birini
-içermektedir. Bazý yazýlýmlar hala bu programa gereksinim
-duymaktadýrlar.
+%description -l tr.UTF-8
+Bu paket UN*X'in en eski metin dÃ¼zenleyicilerinden birini
+iÃ§ermektedir. BazÄ± yazÄ±lÄ±mlar hala bu programa gereksinim
+duymaktadÄ±rlar.
 
-%description -l ru
-Ed - ÜÔÏ ÓÔÒÏÞÎÏ-ÏÒÉÅÎÔÉÒÏ×ÁÎÎÙÊ ÔÅËÓÔÏ×ÙÊ ÒÅÄÁËÔÏÒ, ÉÓÐÏÌØÚÕÅÍÙÊ ÄÌÑ
-ÓÏÚÄÁÎÉÑ, ÐÏËÁÚÁ É ÍÏÄÉÆÉËÁÃÉÉ ÔÅËÓÔÏ×ÙÈ ÆÁÊÌÏ× (ËÁË ÉÎÔÅÒÁËÔÉ×ÎÏ, ÔÁË
-É ÐÒÉ ÐÏÍÏÝÉ ÓËÒÉÐÔÏ×). äÌÑ ÂÏÌØÛÉÎÓÔ×Á ÃÅÌÅÊ ed ÂÙÌ ÚÁÍÅÎÅÎ
-ÐÏÌÎÏÜËÒÁÎÎÙÍÉ ÒÅÄÁËÔÏÒÁÍÉ (ÎÁÐÒÉÍÅÒ, joe, vi, emacs).
+%description -l ru.UTF-8
+Ed - ÑÑ‚Ð¾ ÑÑ‚Ñ€Ð¾Ñ‡Ð½Ð¾-Ð¾Ñ€Ð¸ÐµÐ½Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ñ‚ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ð¹ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¾Ñ€, Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÐ¼Ñ‹Ð¹ Ð´Ð»Ñ
+ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ, Ð¿Ð¾ÐºÐ°Ð·Ð° Ð¸ Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ð¸ Ñ‚ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ñ… Ñ„Ð°Ð¹Ð»Ð¾Ð² (ÐºÐ°Ðº Ð¸Ð½Ñ‚ÐµÑ€Ð°ÐºÑ‚Ð¸Ð²Ð½Ð¾, Ñ‚Ð°Ðº
+Ð¸ Ð¿Ñ€Ð¸ Ð¿Ð¾Ð¼Ð¾Ñ‰Ð¸ ÑÐºÑ€Ð¸Ð¿Ñ‚Ð¾Ð²). Ð”Ð»Ñ Ð±Ð¾Ð»ÑŒÑˆÐ¸Ð½ÑÑ‚Ð²Ð° Ñ†ÐµÐ»ÐµÐ¹ ed Ð±Ñ‹Ð» Ð·Ð°Ð¼ÐµÐ½ÐµÐ½
+Ð¿Ð¾Ð»Ð½Ð¾ÑÐºÑ€Ð°Ð½Ð½Ñ‹Ð¼Ð¸ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¾Ñ€Ð°Ð¼Ð¸ (Ð½Ð°Ð¿Ñ€Ð¸Ð¼ÐµÑ€, joe, vi, emacs).
 
 %prep
-%setup  -q
+%setup -q
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
+
+rm -f doc/ed.info
 
 %build
-chmod +w configure
-%{__autoconf}
+# not autoconf configure, but options compatible
 %configure
 
-rm -f ed.info
-rm -f stamp-h.in
-%{__make}
+%{__make} all doc
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install install-man \
+	DESTDIR=$RPM_BUILD_ROOT
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%post	-p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%postun	-p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS POSIX README
-%attr(755,root,root) /bin/*
-
-%{_infodir}/*info*
+%doc AUTHORS ChangeLog NEWS README TODO
+%attr(755,root,root) %{_bindir}/ed
+%attr(755,root,root) %{_bindir}/red
+%{_infodir}/ed.info*
 %{_mandir}/man1/*
 %lang(nl) %{_mandir}/nl/man1/*
 %lang(pl) %{_mandir}/pl/man1/*

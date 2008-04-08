@@ -1,0 +1,15 @@
+--- ed-0.6/Makefile.in.orig	2007-07-11 18:44:28.507057421 +0200
++++ ed-0.6/Makefile.in	2007-07-11 20:13:08.702238066 +0200
+@@ -15,10 +15,10 @@
+ all : $(progname)
+ 
+ $(progname) : $(objs)
+-	$(CC) $(LDFLAGS) -o $(progname) $(objs)
++	$(CC) $(LDFLAGS) $(CFLAGS) -o $(progname) $(objs)
+ 
+ p$(progname) : $(objs)
+-	$(CC) $(LDFLAGS) -pg -o p$(progname) $(objs)
++	$(CC) $(LDFLAGS) $(CFLAGS) -pg -o p$(progname) $(objs)
+ 
+ main.o : main.c
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -DPROGVERSION=\"$(progversion)\" -c -o $@ $<
