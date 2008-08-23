@@ -1,11 +1,11 @@
---- ed-0.6/Makefile.in.orig	2007-07-11 07:30:30.566630525 +0200
-+++ ed-0.6/Makefile.in	2007-07-11 07:34:51.909523607 +0200
+--- ed-1.0/Makefile.in.orig	2008-05-04 17:57:10.000000000 +0200
++++ ed-1.0/Makefile.in	2008-08-23 23:14:21.434113358 +0200
 @@ -59,7 +59,7 @@
  	if test ! -d $(DESTDIR)$(mandir)/man1 ; then $(INSTALL) -d $(DESTDIR)$(mandir)/man1 ; fi
- 	$(INSTALL_DATA) $(VPATH)/doc/$(progname).1 $(DESTDIR)$(mandir)/man1/$(progname).1
- 	-rm -f $(DESTDIR)$(mandir)/man1/r$(progname).1
--	cd $(DESTDIR)$(mandir)/man1 ; ln $(progname).1 r$(progname).1
-+	cd $(DESTDIR)$(mandir)/man1 ; echo ".so $(progname).1" > r$(progname).1
+ 	$(INSTALL_DATA) $(VPATH)/doc/$(progname).1 $(DESTDIR)$(mandir)/man1/$(program_prefix)$(progname).1
+ 	-rm -f $(DESTDIR)$(mandir)/man1/$(program_prefix)r$(progname).1
+-	cd $(DESTDIR)$(mandir)/man1 ; ln $(program_prefix)$(progname).1 $(program_prefix)r$(progname).1
++	cd $(DESTDIR)$(mandir)/man1 ; echo ".so $(program_prefix)$(progname).1" >$(program_prefix)r$(progname).1
  
  install-strip : all
  	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' install
