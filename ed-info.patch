@@ -1,13 +1,13 @@
 --- ed-0.6/doc/ed.texinfo.orig	2007-06-29 02:10:39.000000000 +0200
 +++ ed-0.6/doc/ed.texinfo	2007-07-11 07:29:59.024833061 +0200
 @@ -8,9 +8,9 @@
- @set UPDATED 29 June 2007
- @set VERSION 0.6
+ @set UPDATED 31 January 2009
+ @set VERSION 1.2
  
 -@dircategory Basics
 +@dircategory File utilities:
  @direntry
--* Ed: (ed).                     The GNU line editor.
+-* Ed: (ed).                     The GNU line editor
 +* Ed: (ed).				The GNU line editor
  @end direntry
  

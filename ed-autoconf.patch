@@ -4,7 +4,7 @@
  	if test ! -d $(DESTDIR)$(mandir)/man1 ; then $(INSTALL) -d $(DESTDIR)$(mandir)/man1 ; fi
  	$(INSTALL_DATA) $(VPATH)/doc/$(progname).1 $(DESTDIR)$(mandir)/man1/$(program_prefix)$(progname).1
  	-rm -f $(DESTDIR)$(mandir)/man1/$(program_prefix)r$(progname).1
--	cd $(DESTDIR)$(mandir)/man1 ; ln $(program_prefix)$(progname).1 $(program_prefix)r$(progname).1
+-	cd $(DESTDIR)$(mandir)/man1 && ln -s $(program_prefix)$(progname).1 $(program_prefix)r$(progname).1
 +	cd $(DESTDIR)$(mandir)/man1 ; echo ".so $(program_prefix)$(progname).1" >$(program_prefix)r$(progname).1
  
  install-strip : all
