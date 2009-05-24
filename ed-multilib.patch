@@ -7,9 +7,9 @@
 -	$(CC) $(LDFLAGS) -o $(progname) $(objs)
 +	$(CC) $(LDFLAGS) $(CFLAGS) -o $(progname) $(objs)
  
- profiled_$(progname) : $(objs)
--	$(CC) $(LDFLAGS) -pg -o profiled_$(progname) $(objs)
-+	$(CC) $(LDFLAGS) $(CFLAGS) -pg -o profiled_$(progname) $(objs)
+ $(progname)_profiled : $(objs)
+-	$(CC) $(LDFLAGS) -pg -o $(progname)_profiled $(objs)
++	$(CC) $(LDFLAGS) $(CFLAGS) -pg -o $(progname)_profiled $(objs)
  
  main.o : main.c
  	$(CC) $(CPPFLAGS) $(CFLAGS) -DPROGVERSION=\"$(progversion)\" -c -o $@ $<
