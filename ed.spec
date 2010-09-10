@@ -9,18 +9,20 @@ Summary(ru.UTF-8):	Строчный редактор GNU
 Summary(tr.UTF-8):	GNU satır düzenleyici
 Summary(uk.UTF-8):	Рядковий редактор GNU
 Name:		ed
-Version:	1.4
+Version:	1.5
 Release:	1
 License:	GPL v3+
 Group:		Applications/Editors
-Source0:	http://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.gz
-# Source0-md5:	da0ddc0e0b0bec2da4b13b0d0d1bce2b
+Source0:	http://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.lz
+# Source0-md5:	85353341854929bcd3526ed0814b1ed0
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	13a5459ddffbd7f04aa3d67fce0d2134
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-autoconf.patch
-Patch2:		%{name}-multilib.patch
+Patch1:		%{name}-multilib.patch
 URL:		http://www.gnu.org/software/ed/
+BuildRequires:	lzip
+BuildRequires:	rpmbuild(macros) >= 1.402
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -88,9 +90,9 @@ Ed - это строчно-ориентированный текстовый р�
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
-rm -f doc/ed.info
+# force rebuild
+%{__rm} doc/ed.info
 
 %build
 # not autoconf configure, but options compatible
