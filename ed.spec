@@ -9,12 +9,12 @@ Summary(ru.UTF-8):	Строчный редактор GNU
 Summary(tr.UTF-8):	GNU satır düzenleyici
 Summary(uk.UTF-8):	Рядковий редактор GNU
 Name:		ed
-Version:	1.14.1
+Version:	1.14.2
 Release:	1
 License:	GPL v3+
 Group:		Applications/Editors
 Source0:	http://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.lz
-# Source0-md5:	7f4a54fa7f366479f03654b8af645fd0
+# Source0-md5:	273d04778b2a51f7c3cbfcd2001876bf
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	13a5459ddffbd7f04aa3d67fce0d2134
 Patch0:		%{name}-info.patch
