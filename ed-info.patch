@@ -1,8 +1,8 @@
 --- ed-1.10/doc/ed.texi.orig	2007-06-29 02:10:39.000000000 +0200
 +++ ed-1.10/doc/ed.texi	2007-07-11 07:29:59.024833061 +0200
 @@ -8,9 +8,9 @@
- @set UPDATED 31 January 2009
- @set VERSION 1.2
+ @set UPDATED 4 February 2022
+ @set VERSION 1.18
  
 -@dircategory Basics
 +@dircategory File utilities:
