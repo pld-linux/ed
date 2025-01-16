@@ -9,12 +9,12 @@ Summary(ru.UTF-8):	Строчный редактор GNU
 Summary(tr.UTF-8):	GNU satır düzenleyici
 Summary(uk.UTF-8):	Рядковий редактор GNU
 Name:		ed
-Version:	1.20.2
+Version:	1.21
 Release:	1
 License:	GPL v3+
 Group:		Applications/Editors
 Source0:	https://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.lz
-# Source0-md5:	8f31ca1cb5a2e2ca8ee2598cc0bf53e1
+# Source0-md5:	a68c643733b7123ddad15f7395cb8c61
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	13a5459ddffbd7f04aa3d67fce0d2134
 Patch0:		%{name}-info.patch
@@ -88,7 +88,7 @@ Ed - это строчно-ориентированный текстовый р�
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 # force rebuild
 %{__rm} doc/ed.info
