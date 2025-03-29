@@ -10,7 +10,7 @@ Summary(tr.UTF-8):	GNU satır düzenleyici
 Summary(uk.UTF-8):	Рядковий редактор GNU
 Name:		ed
 Version:	1.21.1
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Editors
 Source0:	https://ftp.gnu.org/gnu/ed/%{name}-%{version}.tar.lz
@@ -94,8 +94,15 @@ Ed - это строчно-ориентированный текстовый р�
 %{__rm} doc/ed.info
 
 %build
-# not autoconf configure, but options compatible
-%configure
+# not autoconf configure; partially options compatible, but doesn't allow passing variables via env
+./configure \
+	CC="%{__cc}" \
+	CPPFLAGS="%{rpmcppflags}" \
+	CFLAGS="%{rpmcflags} -Wall -W" \
+	LDFLAGS="%{rpmldflags}" \
+	--prefix=%{_prefix} \
+	--exec-prefix= \
+	--bindir=%{_bindir}
 
 %{__make} all doc
 
