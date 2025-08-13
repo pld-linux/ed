@@ -1,8 +1,8 @@
---- ed-1.21.1/doc/ed.texi.orig	2025-03-29 21:18:26.040757889 +0100
-+++ ed-1.21.1/doc/ed.texi	2025-03-29 21:18:57.073923102 +0100
+--- ed-1.22.1/doc/ed.texi.orig	2025-08-05 13:59:33.000000000 +0200
++++ ed-1.22.1/doc/ed.texi	2025-08-13 21:36:46.987079026 +0200
 @@ -9,9 +9,9 @@
- @set UPDATED 24 March 2025
- @set VERSION 1.21.1
+ @set UPDATED 5 August 2025
+ @set VERSION 1.22.1
  
 -@dircategory Basics
 +@dircategory File utilities:
